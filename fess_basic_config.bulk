@@ -1,5 +1,7 @@
 {"index":{"_index":"fess_config.key_match","_id":"QcvpSZIBhwvgDVMYjp_M"}}
 {"updatedTime":1727818768188,"updatedBy":"admin","createdBy":"admin","query":"url:\"https://www.klishgroup.com/about.html\"","createdTime":1727816896196,"boost":10000.0,"maxSize":1,"term":"fluint"}
+{"index":{"_index":"fess_config.related_query","_id":"sMWjbZIBQCL1ZDhVGtd7"}}
+{"updatedTime":1728416258678,"updatedBy":"admin","createdBy":"admin","createdTime":1728416258678,"term":"fluint","queries":["url:\"https://www.klishgroup.com/about.html\""]}
 {"index":{"_index":"fess_config.scheduled_job","_id":"default_crawler"}}
 {"name":"Default Crawler","target":"all","cronExpression":"0 0 * * *","scriptType":"groovy","scriptData":"return container.getComponent(\"crawlJob\").logLevel(\"info\").gcLogging().execute(executor);","jobLogging":true,"crawler":true,"available":true,"sortOrder":1,"createdBy":"system","createdTime":0,"updatedBy":"system","updatedTime":0}
 {"index":{"_index":"fess_config.scheduled_job","_id":"suggest_indexer"}}
