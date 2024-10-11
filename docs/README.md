@@ -75,5 +75,4 @@ For more information on OpenSearch Docker images, see the [OpenSearch Docker doc
 
 ## Issues
 
-- Dynamic Content is not working
 - Cannot get synonyms to work in Fess but they work when directly querying OpenSearch

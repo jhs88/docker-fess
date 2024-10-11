@@ -58,7 +58,9 @@ curl -X GET "localhost:9200/fess.search/_search?pretty=true" -H 'Content-Type: a
 
 ## Dictionary Save Location
 
-The dictionary active is saved inside OpenSearch in the `config/dictonary` index. Files in fess are only ran at initial startup and are not saved to Fess's filesystem. This means that if you make changes to the dictionary, it will not carry over these changes to files in `fess_indices` in the webapp. Fess provides several ways of managing the dictionary, including uploading a file or using the API. See the [Fess documentation](https://fess.codelibs.org/overview.html) for more information.
+The dictionary active is saved inside OpenSearch in the `config/dictonary` index. Files in fess are only ran at initial startup and are not saved to Fess's filesystem. This means that if you make changes to the dictionary, it will not carry over these changes to files in `fess_indices` in the webapp. Fess provides several ways of managing the dictionary, including uploading a file or using the API. 
+
+See the [Fess documentation](https://fess.codelibs.org/overview.html) for more information.
 
 ## Notes
 

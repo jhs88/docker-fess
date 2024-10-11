@@ -34,7 +34,7 @@ Navigate to `System` -> `Jobs` Click the `Start` button to start the default cra
 
 ## Important Config Parameters
 
-The configuration parameters for the web crawler can be found in the `fess_config.properties` inside the Fess container. The default location is `/opt/fess/app/WEB-INF/classes/fess_config.properties`. They can also be modified using `bulk` config backups. These can be modified per crawler or globally. These properties are not well documented in the Fess documentation, so some important ones are listed below:
+The configuration parameters for the web crawler can be found in the `fess_config.properties` inside the Fess container. The default location is `/opt/fess/app/WEB-INF/classes/fess_config.properties`, but the container uses `/etc/fess/fess_config.properties` These can be modified per crawler or globally. These properties are not well documented in the Fess documentation, so some important ones are listed below:
 
 ### Crawling Dynamic Content
 
@@ -45,3 +45,15 @@ Once the `playwright` library is added, add the following config parameter to yo
 ```properties
 client.crawlerClients=playwright:http://.*,playwright:https://.*
 ```
+
+### Pruning HTML tags
+
+Sometimes there is HTML that contains tags that purged by the default HTML tag pruner. To disable the HTML tag, remove it from the following property in `fess_config.properties`:
+
+```properties
+crawler.document.html.pruned.tags=noscript,script,style,header,footer,aside,nav,a[rel=nofollow]
+```
+
+For example if scraping a default `create-react-app` site, you may not want to prune the `header` tag since the content of this page is only rendered in a `header` tag. Removing this tag should then allow the content to be indexed.
+
+This value does not seem to work when it is added to the crawler settings. It must be added to the `fess_config.properties` file.
